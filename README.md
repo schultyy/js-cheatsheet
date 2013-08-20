@@ -5,38 +5,43 @@ This is my personal JavaScript cheat sheet
 ### Get clicked item in event handler
 
 Get the current clicked item in click handler
-
+```JavaScript
     function clicked(e){
       e.preventDefault();
       var id = $(e.currentTarget);
     }
+```
 
 ## backbone.js
 ### Create a new model
 
 Argument to `extend` stays empty.
 
+```JavaScript
     var PodcastFeed = Backbone.Model.extend({ });
+```
 
 Create a new feed:
 
+```JavaScript
     var cre = new PodcastFeed(
     { 
       id: "1",
       title: "CRE", 
       image: "http://meta.metaebene.me/media/cre/cre-logo-1400x1400.jpg"
     });
+```
 
 `PodcastFeed` gets an object with feed properties.
 
 ### Access an model property
-
+```JavaScript
     var title = cre.get("title");
-
+```
 ### Click handlers
 
 Consider this view:
-
+```JavaScript
     var PodcastView = Backbone.View.extend({
       tagName: "ul",
 
@@ -60,11 +65,11 @@ Consider this view:
           });
       }
     });
-
+```
 A click handler is specified by an `events` object. The property name specifies the elements where an handler should be attached. The value is the method name which will be called on click.
 
 Html: 
-
+```HTML
     <!-- Template for a single item -->
     <script id="item-template" type="text/x-jquery-tmpl">
       <li class="span2">
@@ -80,4 +85,4 @@ Html:
     <div id="feed-list" class="span2">
       
     </div>
-
+```
