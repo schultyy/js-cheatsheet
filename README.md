@@ -86,3 +86,15 @@ Html:
       
     </div>
 ```
+### Add class name to view
+There will be the case you want to add a class to your view being rendered. Simply add a `className` property to your view:
+
+```JavaScript
+    var FooView = Backbone.View.extend({
+       tagName: "ul",
+       className: "unstyled", //the class unstyled will be added on render automatically
+       render: function(){
+        //render your view here
+       }
+    });
+```
