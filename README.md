@@ -5,6 +5,7 @@ This is my personal JavaScript cheat sheet
 ### Get clicked item in event handler
 
 Get the current clicked item in click handler
+
     function clicked(e){
       e.preventDefault();
       var id = $(e.currentTarget);
