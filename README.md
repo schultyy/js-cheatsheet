@@ -37,29 +37,29 @@ Create a new feed:
 
 Consider this view:
 
-  var PodcastView = Backbone.View.extend({
-    tagName: "ul",
+    var PodcastView = Backbone.View.extend({
+      tagName: "ul",
 
-    events: {
-      'click .podcast-list-item img' : 'thumbnailClicked'
-    },
+      events: {
+        'click .podcast-list-item img' : 'thumbnailClicked'
+      },
 
-    thumbnailClicked: function(e){
-      e.preventDefault();
-      var id = $(e.currentTarget).data("id");
-      var item = this.collection.get(id);
-      alert(item.get("title"));
-    },
+      thumbnailClicked: function(e){
+        e.preventDefault();
+        var id = $(e.currentTarget).data("id");
+        var item = this.collection.get(id);
+        alert(item.get("title"));
+      },
 
-    render: function(){
-        var template = $("#item-template");
-        var el = $(this.el);
-        this.collection.each(function(model){
-            var html = template.tmpl(model.toJSON());
-            el.append(html);
-        });
-    }
-  });
+      render: function(){
+          var template = $("#item-template");
+          var el = $(this.el);
+          this.collection.each(function(model){
+              var html = template.tmpl(model.toJSON());
+              el.append(html);
+          });
+      }
+    });
 
 A click handler is specified by an `events` object. The property name specifies the elements where an handler should be attached. The value is the method name which will be called on click.
 
