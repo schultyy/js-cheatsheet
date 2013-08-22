@@ -99,6 +99,24 @@ There will be the case you want to add a class to your view being rendered. Simp
     });
 ```
 
+### Base a view on an existing element
+
+```HTML
+  <div id="foo">
+  </div>
+```
+
+```JavaScript
+  var MyView = Backbone.View.extend({
+    el: "#foo",
+    render: function(){
+      $(this.el).empty(); //Empties the view before actual rendering. 
+    }
+  });
+  var view = new MyView();
+  view.render();  //No need to insert the rendered html manually into #foo. Backbone handles that automatically in this case.
+```
+
 ## node.js
 
 ### Tutorials
