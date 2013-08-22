@@ -125,6 +125,9 @@ There will be the case you want to add a class to your view being rendered. Simp
   view.render();  //No need to insert the rendered html manually into #foo. Backbone handles that automatically in this case.
 ```
 
+### Tutorials
+- http://backbonetutorials.com/what-is-a-model/
+
 ## node.js
 
 ### Tutorials
