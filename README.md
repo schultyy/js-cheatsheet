@@ -38,6 +38,14 @@ Create a new feed:
 ```JavaScript
     var title = cre.get("title");
 ```
+
+### Set model property after instantiation
+
+```JavaScript
+    var person = new Person();
+    person.set({ name: "Thomas", age: 67});
+```
+
 ### Click handlers
 
 Consider this view:
