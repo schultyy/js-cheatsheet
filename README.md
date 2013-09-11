@@ -147,6 +147,29 @@ Load data:
 
 `fetch` does the actual service call and fills the models.
 
+### Render view after data was loaded
+Source: [StackOverflow](http://stackoverflow.com/a/11290928/2381304)
+
+We want to render our models *after* they were loaded from service.
+```JavaScript
+    var MyView = Backbone.View.extend({
+        initialize: function(){
+            var self = this;
+            this.collection.fetch().complete(function(){
+                self.render();
+            });
+        },
+        render: function(){
+            this.collection.each(function(element){
+                //render your model here
+            });
+        }
+    });
+    var view = new MyView({
+        collection: myCollection
+    });
+```
+
 ### Tutorials
 - http://backbonetutorials.com/what-is-a-model/
 
