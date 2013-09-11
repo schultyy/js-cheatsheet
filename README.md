@@ -125,6 +125,28 @@ There will be the case you want to add a class to your view being rendered. Simp
   view.render();  //No need to insert the rendered html manually into #foo. Backbone handles that automatically in this case.
 ```
 
+### Load data from service
+
+```JavaScript
+    var MyModel = Backbone.Model.extend();
+    var MyCollection = Backbone.Collection.extend({
+        url: '/getData',
+        model: MyModel
+    });
+```
+At first create a new model and collection. The collection needs an `url` where it can fetch data from.
+
+Load data:
+```JavaScript
+    var foo = new MyCollection();
+    foo.fetch({
+        success: function(){ /*Yay, new data*/ },
+        error: function() { /*Sorry dude, you messsed it up*/ }
+    });
+```
+
+`fetch` does the actual service call and fills the models.
+
 ### Tutorials
 - http://backbonetutorials.com/what-is-a-model/
 
