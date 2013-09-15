@@ -141,7 +141,7 @@ Load data:
     var foo = new MyCollection();
     foo.fetch({
         success: function(){ /*Yay, new data*/ },
-        error: function() { /*Sorry dude, you messsed it up*/ }
+        error: function() { /*Sorry dude, you screw up*/ }
     });
 ```
 
